@@ -31,12 +31,10 @@
                 </nav>
             </header>
         {% endblock %}
-
-        {% block flashes %}
-            {% include 'partials/flashes.html.twig' with {flashes: app.flashes} only %}
+        {% block body %}
+            {{ include('partials/flash-messages.html.twig') }}
+            {% block main %}{% endblock %}
         {% endblock %}
-
-        {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
